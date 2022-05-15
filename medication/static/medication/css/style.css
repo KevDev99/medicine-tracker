@@ -1,0 +1,30 @@
+.logo {
+  height: 20px;
+  filter: invert(32%) sepia(94%) saturate(1295%) hue-rotate(304deg) brightness(94%) contrast(92%);
+}
+
+.landing-img {
+  height: 20em;
+}
+
+.primary-icon{
+  filter: invert(32%) sepia(94%) saturate(1295%) hue-rotate(304deg) brightness(94%) contrast(92%);
+}
+
+#id_day {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#id_day>div{
+  padding-right: 1rem;
+}
+
+#id_time {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#id_time>div{
+  padding-right: 1rem;
+}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}MedRem | Log In{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+ 
+  <form method="post">
+    <div class="d-flex align-items-center">
+     
+      <h2>Log In</h2>
+      <a class="p-3" href="{% url 'signup' %}" class="link-primary">Or register ?</a>
+    </div>
+    
+   
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="mb-3">
+      <label class="form-label">{{ field.label_tag }}</label>
+      <br>
+      {{ field }}
+      {% if field.help_text %}
+      <div class="form-text">{{ field.help_text }}</div>
+      {% endif %}
+      {% for error in field.errors %}
+      <p style="color: red">{{ error }}</p>
+      {% endfor %}
+
+    </div>
+    {% endfor %}
+
+    <button class="btn btn-primary" type="submit">Login</button>
+
+  </form>
+</div>
+
+{% endblock %}

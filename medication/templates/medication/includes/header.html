@@ -1,0 +1,41 @@
+{% load static %}
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <nav class="navbar navbar-light ">
+        <a class="navbar-brand" href="/">
+          <img class="logo" class="d-inline-block" src={% static 'medication/icons/med.svg' %} alt="logo" />
+          MedRem
+        </a>
+      </nav>
+
+      <form class="form-inline">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03"
+          aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor03">
+          <ul class="navbar-nav me-auto">
+            {% if user.is_authenticated %}
+            
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'logout' %}">Log Out
+                <span class="visually-hidden">(current)</span>
+              </a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'login' %}">Log In
+                <span class="visually-hidden">(current)</span>
+              </a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </form>
+    </div>
+  </nav>
+</header>

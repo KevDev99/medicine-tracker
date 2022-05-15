@@ -1,0 +1,71 @@
+<!-- templates/home.html -->
+{% extends 'medication/base.html' %}
+
+{% load static %}
+
+{% block title %}MedRem | Landing{% endblock %}
+
+
+{% block content %}
+<section id="landing">
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-12">
+        <img class="landing-img img-responsive center-block d-block mx-auto" 
+        src={%          static 'medication/images/landing.svg' %} alt="landing" />
+
+      </div>
+      <div class="col-lg-12 mt-5">
+        <h2 class="text-center">Your Caring Partner</h2>
+        <blockquote class="text-center"><a href="/accounts/login" class="link-primary">Get Started</a> and you will never ever forget
+          to intake your medicine again</blockquote>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-lg-12 mt-5">
+        <h3>Features:</h3>
+      </div>
+
+      <div class="col-4">
+        <div class="card " style="width: 18rem;">
+          <img src={% static 'medication/images/pills.svg' %} class="card-img-top" alt="reminder">
+          <div class="card-body">
+            <h5 class="card-title">Medication Mgmt.</h5>
+            <blockquote class="card-text">
+              Get an overview of your current medications and their dosage
+            </blockquote>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card " style="width: 18rem;">
+          <img src={% static 'medication/images/reminder.svg' %} class="card-img-top" alt="reminder">
+          <div class="card-body">
+            <h5 class="card-title">Auto-Reminder</h5>
+            <blockquote class="card-text">
+              auto-reminders when you need to take your medicine.
+            </blockquote>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card mt-2" style="width: 18rem;">
+          <img src={% static 'medication/images/stats.svg' %} class="card-img-top" alt="reminder">
+          <div class="card-body">
+            <h5 class="card-title">Statistics</h5>
+            <blockquote class="card-text">
+              Get your Medication intake in statistics
+            </blockquote>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

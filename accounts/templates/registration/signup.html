@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}MedRem | Sign Up{% endblock %}
+
+{% block content %}
+
+<div class="container mt-2">
+  <h2>Sign up</h2>
+  <form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      {% if field.help_text %}
+      <div id="emailHelp" class="form-text">{{ field.help_text }}</div>
+      {% endif %}
+      {% for error in field.errors %}
+      <p style="color: red">{{ error }}</p>
+      {% endfor %}
+    </div>
+    {% for field in register_form %}
+    <div class="mb-3">
+      <label for="label" class="form-label">{{ field.label_tag }}</label>
+      <br>
+      {{ field }}
+      {% if field.help_text %}
+      <div id="emailHelp" class="form-text">{{ field.help_text }}</div>
+      {% endif %}
+      {% for error in field.errors %}
+      <p style="color: red">{{ error }}</p>
+      {% endfor %}
+    </div>
+    {% endfor %}
+
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+  </form>
+</div>
+
+{% endblock %}
